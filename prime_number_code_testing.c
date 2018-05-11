@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include<math.h>
 
-int print(long n){
+char print(long n){
 
 int i;
 int c=0;
+char output;
 if(n<10){
     for(i=1;i<=n;i++)
     {
@@ -13,10 +14,12 @@ if(n<10){
         }
     }
     if(c==2){
-        printf("\nCode says %d is a prime number\n",n);
+        output='p';
+        printf("Code says %d is a prime number\n",n);//p means it is a prime number
     }
     else{
-        printf("\nCode says %d is not a prime number\n",n);
+        output='n';
+        printf("Code says %d is not a prime number\n",n);//n means not a prime number
 
     }
 }
@@ -30,31 +33,27 @@ for(i=2;i<=10;i++){
     }
 }
 if(c==0){
-    printf("\nCode says %d is a prime number\n",n);
+    output='p';
+    printf("Code says %d is a prime number\n",n);//p means it is a prime number
 }
 else{
-    printf("\nCode says %d is not a prime number\n",n);
+    output='n';
+    printf("Code says %d is not a prime number\n",n);//n means not a prime number
 }
 }
-return 0;
+return output;
 }
 
 
-int test(){
-    long n;
-    int i;
-    int c=0;
-    n=0;
-    if(n==0 || n==1){
-        print(n);
-        printf("And facts say 0 and 1 is neither prime nor composite\n");
-        }
-    n=1;
-    if(n==0 || n==1){
-        print(n);
-        printf("And facts say 0 and 1 is neither prime nor composite\n");
-        }
-    return 0;
+int test(int input,char expected,int test_case){
+    char output;
+    output=print(input);
+    if(output==expected){
+        printf("TestCase %d passed\n",test_case);
+    }
+    else{
+        printf("Test case %d failed\n",test_case);
+    }
 }
 
 
@@ -72,7 +71,13 @@ int main(){
                scanf("%d",&n);
                print(n);
                break;
-        case 2:test();
+        case 2:test(2,'p',1);
+               test(3,'p',2);
+               test(4,'n',3);
+               test(23,'p',4);
+               test(27,'n',5);
+               test(29,'p',6);
+               test(31,'p',7);
                break;
         case 3:return 1;
         default:
