@@ -20,7 +20,7 @@ The C standards committee responsible for making the decisions regarding C stand
 
 Now let's focus on some important standards.
 
-####C99####
+##C99##
 
 C99 is the informal name given to the ISO/IEC 9899:1999 standards specification for C that was adopted in 1999. The C99 standard added **five more keywords** to ANSI C, and the total number of keywords became **37**. 
 
