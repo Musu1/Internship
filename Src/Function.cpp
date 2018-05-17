@@ -1,4 +1,3 @@
-#include<iostream>
 # define MAX 1000
 
 int functionResult;//output given by all the functions
@@ -143,30 +142,23 @@ void display(){
   Parameters : 
     firstNumber - The first number to be used in the operation
     secondNumber - The second number to be used in the operation
-    operation - character can be =,-,/,*,c,m 
+    operation - character can be =,-,/,*
   Return :
     the calculated output after the operation
  */
 int choose(int firstNumber,int secondNumber, char operation){
     int output;
-    if(operation =='+'){
+    if(operation =='+'){ //If operation is + then it will call the add function
         output=add(firstNumber,secondNumber);
     }
-    else if(operation == '-'){
+    else if(operation == '-'){//If operation is - then it will call the sub function 
         output=sub(firstNumber,secondNumber);
     }
-    else if(operation == '*'){
+    else if(operation == '*'){//If operation is * then it will call the mul function
         output=mul(firstNumber,secondNumber);
     }
-   else if(operation == '/'){
+   else if(operation == '/'){//If operation is / then it will call the divide function
         output=divide(firstNumber,secondNumber);
     }
-    /*else if(operation == 'c'){
-        display();
-        exit(0);
-    }
-    else if(operation == 'm'){
-            push(output);
-        }*/
     return output;
 }
