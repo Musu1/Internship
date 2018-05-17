@@ -1,3 +1,10 @@
+# define MAX 1000
+
+int functionResults;//output given by all the functions
+int TOP;// Pointer used in stack
+int STACK[MAX]//Stack with size 1000
+
+
 /*Function: add
     Add two integers
   Parameters : 
@@ -51,7 +58,6 @@ int mul(int a,int b){
 */
 
 int divide(int a,int b){
-    float functionResult;
     functionResult=a/b;
     return functionResult;
 }
@@ -129,4 +135,32 @@ void display(){
         cout<<STACK[i]<<" ";
     }
     cout<<endl;
+}
+
+/*
+ Function: choose
+    Add two integers
+  Parameters : 
+    None
+  Return :
+    Prints the stack.
+ */
+void choose(int firstNumber,int secondNumber, char operation){
+    int output;
+    if(operation =='+'){
+        output=add(firstNumber,secondNumber);
+    }
+    else if(operation == '-'){
+        output=sub(firstNumber,secondNumber);
+    }
+    else if(operation == '*'){
+        output=mul(firstNumber,secondNumber);
+    }
+   else if(operation == '/'){
+        output=divide(firstNumber,secondNumber);
+    }
+    else if(operatin == 'c'){
+        exit(0);
+    }
+    return output;
 }
