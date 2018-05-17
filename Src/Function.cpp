@@ -121,7 +121,7 @@ void push(int num){
   Parameters : 
     None
   Return :
-    Prints the stack.
+    Prints the stack and if the stack is empty prints Nothing in Memory
 */
 
 void display(){
@@ -139,11 +139,13 @@ void display(){
 
 /*
  Function: choose
-    Add two integers
+    Chooses according the operation parameter which operation to be done
   Parameters : 
-    None
+    firstNumber - The first number to be used in the operation
+    secondNumber - The second number to be used in the operation
+    operation - character can be =,-,/,*,c,m 
   Return :
-    Prints the stack.
+    the calculated output after the operation
  */
 void choose(int firstNumber,int secondNumber, char operation){
     int output;
@@ -159,8 +161,12 @@ void choose(int firstNumber,int secondNumber, char operation){
    else if(operation == '/'){
         output=divide(firstNumber,secondNumber);
     }
-    else if(operatin == 'c'){
+    else if(operation == 'c'){
+        display();
         exit(0);
     }
+    else if(input1 == 'm'){
+            push(output);
+        }
     return output;
 }
