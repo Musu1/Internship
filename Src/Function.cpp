@@ -1,8 +1,9 @@
+#include<iostream>
 # define MAX 1000
 
-int functionResults;//output given by all the functions
+int functionResult;//output given by all the functions
 int TOP;// Pointer used in stack
-int STACK[MAX]//Stack with size 1000
+int STACK[MAX];//Stack with size 1000
 
 
 /*Function: add
@@ -14,7 +15,6 @@ int STACK[MAX]//Stack with size 1000
     Gives the addition of two numbers
 */ 
 
-int functionResult;
 int add(int a,int b){
     functionResult=a+b;
     return functionResult;
@@ -109,7 +109,7 @@ int isFull(){
  
 void push(int num){
     if(isFull()){
-        cout<<"STACK is FULL."<<endl;
+        std::cout<<"STACK is FULL."<<std::endl;
         return; 
     }
     ++TOP;
@@ -126,15 +126,15 @@ void push(int num){
 
 void display(){
     int i;
-    cout<<"Your memory is:";
+    std::cout<<"Your memory is:";
     if(isEmpty()){
-        cout<<"Nothing in memory"<<endl;
+        std::cout<<"Nothing in memory"<<std::endl;
         return;
     }
     for(i=TOP;i>=0;i--){
-        cout<<STACK[i]<<" ";
+        std::cout<<STACK[i]<<" ";
     }
-    cout<<endl;
+    std::cout<<std::endl;
 }
 
 /*
@@ -147,7 +147,7 @@ void display(){
   Return :
     the calculated output after the operation
  */
-void choose(int firstNumber,int secondNumber, char operation){
+int choose(int firstNumber,int secondNumber, char operation){
     int output;
     if(operation =='+'){
         output=add(firstNumber,secondNumber);
@@ -161,12 +161,12 @@ void choose(int firstNumber,int secondNumber, char operation){
    else if(operation == '/'){
         output=divide(firstNumber,secondNumber);
     }
-    else if(operation == 'c'){
+    /*else if(operation == 'c'){
         display();
         exit(0);
     }
-    else if(input1 == 'm'){
+    else if(operation == 'm'){
             push(output);
-        }
+        }*/
     return output;
 }
