@@ -1,4 +1,4 @@
-cle#include<iostream>
+#include<iostream>
 # define MAX 1000
 
 int functionResult;//output given by all the functions
@@ -58,8 +58,8 @@ int mul(int a,int b){
     Gives the division of two numbers
 */
 
-int divide(int a,int b){
-    functionResult=a/b;
+int divide(float a,float b){
+    float functionResult=a/b;
     return functionResult;
 }
 
@@ -162,7 +162,7 @@ int choose(int firstNumber,int secondNumber, char operation){
         output=key.mul(firstNumber,secondNumber);
     }
    else if(operation == '/'){//If operation is / then it will call the divide function
-        coutput=key.divide(firstNumber,secondNumber);
+        output=key.divide(firstNumber,secondNumber);
     }
     return output;
 }
