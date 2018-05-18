@@ -1,10 +1,11 @@
-#include<iostream># define MAX 1000
+#include<iostream>
+# define MAX 1000
 
 int functionResult;//output given by all the functions
 int TOP;// Pointer used in stack
 int STACK[MAX];//Stack with size 1000
 
-class functions(){
+class functions{
     public:
 /*Function: add
     Add two integers
@@ -16,8 +17,8 @@ class functions(){
 */ 
 
 int add(int a,int b){
-    functionResult=a+b;
-    return functionResult;
+//    functionResult=a+b;
+    return a+b;
 }
 
 /*Function: sub
@@ -62,7 +63,7 @@ int divide(int a,int b){
     return functionResult;
 }
 
-}
+};
 /*Function: initStack
     Initializes a stack by initializing Top pointer as -1
   Parameters : 
@@ -148,10 +149,11 @@ void display(){
   Return :
     the calculated output after the operation
  */
+functions key;
 int choose(int firstNumber,int secondNumber, char operation){
     int output;
     if(operation =='+'){ //If operation is + then it will call the add function
-        output=key.add(firstNumber,secondNumber);
+         output=key.add(firstNumber,secondNumber);
     }
     else if(operation == '-'){//If operation is - then it will call the sub function 
         output=key.sub(firstNumber,secondNumber);
@@ -160,7 +162,7 @@ int choose(int firstNumber,int secondNumber, char operation){
         output=key.mul(firstNumber,secondNumber);
     }
    else if(operation == '/'){//If operation is / then it will call the divide function
-        output=key.divide(firstNumber,secondNumber);
+        coutput=key.divide(firstNumber,secondNumber);
     }
     return output;
 }
