@@ -9,8 +9,7 @@ Check the existing soundcards in your system using the following command:
 
 In my case ,I am doing on RaspberryPi and output looks like the following:
 
-```0 [ALSA           ]: bcm2835_alsa - bcm2835 ALSA
-                      bcm2835 ALSA```
+``` 0 [ALSA           ]: bcm2835_alsa - bcm2835 ALSA bcm2835 ALSA```
 
 So this gives us the card no. which is ```card 0``` ,So card and device we will be using  are ```hw:0,0```.
 
